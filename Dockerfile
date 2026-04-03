@@ -1,5 +1,5 @@
-# Image minimal untuk menjalankan aplikasi Flask demo.
-FROM python:3.12-slim-bookworm
+# Image minimal Alpine untuk mengurangi attack surface.
+FROM python:3.12-alpine
 
 LABEL maintainer="secure-ci-cd-demo"
 LABEL org.opencontainers.image.description="Flask demo untuk pipeline CI/CD aman"
@@ -10,7 +10,14 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 COPY app/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+# Install build dependencies hanya saat instalasi paket Python,
+# lalu hapus agar image runtime tetap kecil dan lebih bersih saat scan.
+RUN apk add --no-cache --virtual .build-deps \
+      gcc \
+      musl-dev \
+  && pip install --no-cache-dir -r requirements.txt \
+  && apk del .build-deps
 
 COPY app/ .
 
