@@ -1,8 +1,8 @@
 # Pengujian endpoint utama aplikasi demo dengan pytest + Flask test client.
 import pytest
 
-# Modul app.py mengekspor instance Flask bernama `app`.
-from app import app as flask_app
+# Modul app.app mengekspor instance Flask bernama `app`.
+from app.app import app as flask_app
 
 
 @pytest.fixture

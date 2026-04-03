@@ -27,8 +27,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run pytest
-        working-directory: app
-        run: pytest tests/ -v
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest app/tests/ -v
 
   security-scan:
     needs: build-test
