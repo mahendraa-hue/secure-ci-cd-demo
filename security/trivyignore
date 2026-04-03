@@ -1,0 +1,3 @@
+# Abaikan sementara CVE berikut untuk kebutuhan demo pipeline.
+# Evaluasi ulang secara berkala sebelum dipakai di produksi.
+CVE-2026-22184

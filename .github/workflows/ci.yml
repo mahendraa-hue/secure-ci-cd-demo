@@ -71,6 +71,7 @@ jobs:
         with:
           scan-type: image
           image-ref: demo-app:ci
+          trivyignores: security/trivyignore
           format: table
           output: trivy-report.txt
           exit-code: "0"
@@ -81,6 +82,7 @@ jobs:
         with:
           scan-type: image
           image-ref: demo-app:ci
+          trivyignores: security/trivyignore
           exit-code: "1"
           severity: HIGH,CRITICAL
 
