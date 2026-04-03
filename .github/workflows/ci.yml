@@ -67,7 +67,7 @@ jobs:
       # Trivy: tidak perlu instal manual CLI — action memakai Trivy resmi (stabil di runner GitHub).
       # Jika base image sering gagal karena CVE belum ada patch: tambahkan ignore-unfixed: "true" (lihat README).
       - name: Trivy — simpan laporan (fallback artefak)
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.20.0
         with:
           scan-type: image
           image-ref: demo-app:ci
@@ -77,7 +77,7 @@ jobs:
           severity: HIGH,CRITICAL
 
       - name: Trivy — gate HIGH/CRITICAL
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.20.0
         with:
           scan-type: image
           image-ref: demo-app:ci
