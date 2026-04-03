@@ -1,0 +1,11 @@
+# Cache pengujian lokal
+.pytest_cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Laporan alat keamanan (dihasilkan lokal)
+bandit-report.json
+trivy-report.txt
+zap_report.html

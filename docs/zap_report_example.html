@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Contoh Laporan ZAP Baseline (placeholder)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; color: #222; }
+    h1 { font-size: 1.25rem; }
+    table { border-collapse: collapse; width: 100%; max-width: 720px; margin-top: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem 0.75rem; text-align: left; }
+    th { background: #f4f4f4; }
+    .note { color: #555; font-size: 0.9rem; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>OWASP ZAP — Baseline Scan (contoh statis)</h1>
+  <p>File ini hanya contoh tampilan agar folder <code>docs/</code> terlihat lengkap di repo template.</p>
+  <p class="note">Di CI asli, artefak <code>zap_report.html</code> dihasilkan oleh action ZAP baseline setelah scan ke <code>http://localhost:5000</code>.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tingkat</th>
+        <th>Nama</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Low</td>
+        <td>X-Content-Type-Options Header Missing</td>
+        <td>http://localhost:5000/</td>
+      </tr>
+      <tr>
+        <td>Informational</td>
+        <td>Contoh temuan informasi</td>
+        <td>http://localhost:5000/login</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
